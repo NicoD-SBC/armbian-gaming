@@ -15,7 +15,7 @@ if [ $choicevar -eq 1 ]
 elif [ $choicevar -eq 2 ]
 	then 
 	box86
-elif [ $choicevar -eq 2 ]
+elif [ $choicevar -eq 3 ]
 	then 
 	box64
 elif [ $choicevar -eq 4 ]

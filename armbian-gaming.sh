@@ -5,7 +5,8 @@ echo "Hello. Please choose what you want to install ! "
 echo "1. Install all "
 echo "2. Install Box86 "
 echo "3. Install Box64 "
-echo "4. Exit armbian-gaming "
+echo "4. Install Wine x86"
+echo "5. Exit armbian-gaming "
 
 read choicevar
 
@@ -19,6 +20,9 @@ elif [ $choicevar -eq 3 ]
 	then 
 	box64
 elif [ $choicevar -eq 4 ]
+	then 
+	winex86
+elif [ $choicevar -eq 5 ]
 	then
 	echo "Greetings, NicoD "
 	exit
@@ -26,6 +30,13 @@ else
 	echo "Invalid choice. "
 fi
 }
+
+function winex86 {
+	sudo cp wine /usr/local/bin/
+	sudo cp wineserver /usr/local/bin/
+	sudo cp winetrickt /usr/local/bin/
+}
+
 
 function update {
 	sudo apt -y update && apt -y upgrade
@@ -42,7 +53,8 @@ function box86 {
 	sudo cmake .. -DRK3399=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 	sudo make -j4
 	sudo make install
-	cd ~/
+	cd ..
+	cd ..
 }
 
 function dependencies {	
@@ -64,7 +76,8 @@ function box64 {
 	cmake .. -DRK3399=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 	make -j4
 	sudo make install
-	cd ~/
+	cd ..
+	cd ..
 }
 
 function all {
@@ -72,6 +85,7 @@ function all {
 	box64
 }
 
+function 
 
 menu
 echo "Greetings, NicoD "

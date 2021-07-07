@@ -34,9 +34,11 @@ fi
 function winex86 {
 	sudo cp wine /usr/local/bin/
 	sudo cp wineserver /usr/local/bin/
-	sudo cp winetrickt /usr/local/bin/
-	sudo cp wine-config.desktop ~/.local/share/applications/
-	sudo cp wine-desktop.desktop ~/.local/share/applications/
+	sudo cp winetricks /usr/local/bin/
+	cp wine-config.desktop ~/.local/share/applications/
+	cp wine-desktop.desktop ~/.local/share/applications/
+	echo "Download wine x86 at sourceforge and place it in ~/home/ "
+	echo "https://sourceforge.net/projects/wine/files/Slackware%20Packages/"
 }
 
 

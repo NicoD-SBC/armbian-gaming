@@ -89,7 +89,7 @@ function all {
 	box64
 }
 
-function 
+ 
 
 menu
 echo "Greetings, NicoD "

@@ -35,6 +35,8 @@ function winex86 {
 	sudo cp wine /usr/local/bin/
 	sudo cp wineserver /usr/local/bin/
 	sudo cp winetrickt /usr/local/bin/
+	sudo cp wine-config.desktop ~/.local/share/applications/
+	sudo cp wine-desktop.desktop ~/.local/share/applications/
 }
 
 

@@ -1,0 +1,3 @@
+#!/bin/bash 
+#export GALLIUM_HUD=simple,fps
+setarch linux32 -L $HOME/wine/bin/wine "$@"

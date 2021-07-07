@@ -1,0 +1,2 @@
+#!/bin/bash
+env BOX86_NOBANNER=1 $HOME/wine/winetricks "$@"

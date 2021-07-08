@@ -69,7 +69,7 @@ function dependencies {
 }
 
 function debianDependenciesFix {
-	 mv /usr/share/doc/linux-libc-dev/changelog.Debian.gz /usr/share/doc/linux-libc-dev/changelog.Debian.gz.old 
+	 sudo mv /usr/share/doc/linux-libc-dev/changelog.Debian.gz /usr/share/doc/linux-libc-dev/changelog.Debian.gz.old 
 	 sudo apt -y --fix-broken install
 }
 

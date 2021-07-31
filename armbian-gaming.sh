@@ -5,8 +5,9 @@ echo "Hello. Please choose what you want to install ! "
 echo "1. Install all "
 echo "2. Install Box86 "
 echo "3. Install Box64 "
-echo "4. Install Wine x86"
-echo "5. Exit armbian-gaming "
+echo "4. Install Wine x86 "
+echo "5. Install dependencies for N2/N2+ before Box86 install "
+echo "6. Exit armbian-gaming "
 
 read choicevar
 
@@ -23,12 +24,19 @@ elif [ $choicevar -eq 4 ]
 	then 
 	winex86
 elif [ $choicevar -eq 5 ]
+	then 
+	depN2
+elif [ $choicevar -eq 6 ]
 	then
 	echo "Greetings, NicoD "
 	exit
 else 
 	echo "Invalid choice. "
 fi
+}
+
+function depN2 {
+	sudo apt install libavutil56:armhf libswresample3:armhf libavutil56:armhf libchromaprint1:armhf libavutil56:armhf libvdpau1:armhf
 }
 
 function winex86 {

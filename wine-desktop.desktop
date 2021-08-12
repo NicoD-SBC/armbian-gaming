@@ -4,6 +4,6 @@ Type=Application
 Name=Wine Desktop
 Comment=Graphical desktop for Wine
 Icon=wine
-Exec=/usr/local/bin/wine explorer /desktop=shell,1280x720 explorer.exe
+box86 Exec=/usr/local/bin/wine explorer /desktop=shell,1280x720 explorer.exe
 Categories=Game;
 Terminal=false

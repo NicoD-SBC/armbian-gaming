@@ -4,6 +4,6 @@ Type=Application
 Name=Wine Configuration
 Comment=Configuration utility for Wine
 Icon=wine
-Exec=/usr/local/bin/wine winecfg
+box86 Exec=/usr/local/bin/wine winecfg
 Categories=Game;
 Terminal=false

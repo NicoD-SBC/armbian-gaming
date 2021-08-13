@@ -1,2 +1,2 @@
 #!/bin/bash 
-box64 $HOME/wine/bin/wineserver "$@"
+box86 $HOME/wine/bin/wineserver "$@"

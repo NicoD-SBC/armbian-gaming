@@ -9,5 +9,6 @@ Download and unzip and run script :
 
 Download Wine 5.13 I686 
 https://sourceforge.net/projects/wine/files/Slackware%20Packages/5.13/i686/
+
 Copy content of /wine-5.13-i686-1sg/usr/ folder to ~/wine/
 

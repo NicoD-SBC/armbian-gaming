@@ -42,14 +42,24 @@ function depN2 {
 function winex86 {
 	sudo cp wine /usr/local/bin/
 	sudo chmod +x /usr/local/bin/wine
+	echo "Copied wine to /usr/local/bin/ and given rights "
+	
 	sudo cp wineserver /usr/local/bin/
 	sudo chmod +x /usr/local/bin/wineserver
+	echo "Copied wineserver to /usr/local/bin/ and given rights "
+
+	
 	sudo cp winetricks /usr/local/bin/
 	sudo chmod +x /usr/local/bin/winetricks
+	echo "Copied winetricks to /usr/local/bin/ and given rights "
+
 	cp wine-config.desktop ~/.local/share/applications/
 	cp wine-desktop.desktop ~/.local/share/applications/
-	echo "Download wine x86 at sourceforge and place it in ~/home/ "
-	echo "https://sourceforge.net/projects/wine/files/Slackware%20Packages/"
+	echo "Copied wine-config.desktop and wine-desktop.desktop to ~/.local/share/applications/ "
+	echo " "
+	echo "Download Wine 5.13 I686 https://sourceforge.net/projects/wine/files/Slackware%20Packages/5.13/i686/ "
+     	echo "Copy content of /wine-5.13-i686-1sg/usr/ folder to ~/wine/ "
+
 }
 
 

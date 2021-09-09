@@ -7,8 +7,7 @@ Download and unzip and run script :
 
 sudo /bin/bash ./armbian-gaming.sh
 
-Download Wine - 
-https://drive.google.com/file/d/110k2yvp20otNSEJ_GVfwZFI5Og05yV-A/view?usp=sharing
-Copy /wine folder to ~/wine
-Copy content of /links to /usr/local/bin/
-Copy conent of /shortcuts to ~/.local/share/applications/
+Download Wine 5.13 I686 
+https://sourceforge.net/projects/wine/files/Slackware%20Packages/5.13/i686/
+Copy content of /wine-5.13-i686-1sg/usr/ folder to ~/wine/
+

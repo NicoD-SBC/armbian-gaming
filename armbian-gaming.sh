@@ -112,6 +112,7 @@ function box64 {
 function all {
 	box86
 	box64
+	wine86
 }
 
  

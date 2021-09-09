@@ -41,8 +41,11 @@ function depN2 {
 
 function winex86 {
 	sudo cp wine /usr/local/bin/
+	sudo chmod +x /usr/local/bin/wine
 	sudo cp wineserver /usr/local/bin/
+	sudo chmod +x /usr/local/bin/wineserver
 	sudo cp winetricks /usr/local/bin/
+	sudo chmod +x /usr/local/bin/winetricks
 	cp wine-config.desktop ~/.local/share/applications/
 	cp wine-desktop.desktop ~/.local/share/applications/
 	echo "Download wine x86 at sourceforge and place it in ~/home/ "

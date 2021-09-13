@@ -58,6 +58,7 @@ function winex86 {
 	echo "Copied wine-config.desktop and wine-desktop.desktop to ~/.local/share/applications/ "
 	echo " "
 	
+	mkdir ~/wine/
 	mkdir ~/wine/lib/
 	cp libwine.so ~/wine/lib/
 	cp libwine.so.1 ~/wine/lib/

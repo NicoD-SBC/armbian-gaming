@@ -57,6 +57,13 @@ function winex86 {
 	cp wine-desktop.desktop ~/.local/share/applications/
 	echo "Copied wine-config.desktop and wine-desktop.desktop to ~/.local/share/applications/ "
 	echo " "
+	
+	mkdir ~/wine/lib/
+	cp libwine.so ~/wine/lib/
+	cp libwine.so.1 ~/wine/lib/
+	echo "Created wine folder and copied libwine.so and libwine.so.1 "
+	echo " "
+	
 	echo "Download Wine 5.13 I686 https://sourceforge.net/projects/wine/files/Slackware%20Packages/5.13/i686/ "
      	echo "Copy content of /wine-5.13-i686-1sg/usr/ folder to ~/wine/ "
 

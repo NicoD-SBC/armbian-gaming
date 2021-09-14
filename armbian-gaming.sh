@@ -110,6 +110,8 @@ function box64 {
 	cd box64
 	mkdir build
 	cd build
+	sudo apt -y install linux-libc-dev
+	sudo apt -y install build-essential 
 	sudo cmake .. -DRK3399=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 	sudo make -j4
 	sudo make install

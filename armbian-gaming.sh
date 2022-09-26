@@ -113,6 +113,8 @@ function wine64 {
 	sudo ln -s $(pwd)/bin/wineserver /usr/local/bin/wineserver
 	sudo ln -s $(pwd)/bin/winecfg /usr/local/bin/winecfg
 	sudo ln -s $(pwd)/bin/wineboot /usr/local/bin/wineboot
+	echo "Wine installed, test with : "
+	echo "wine winecfg "
 }
 
 function update {
@@ -175,10 +177,12 @@ function box86Jammy {
 	sudo dpkg --add-architecture armhf
 	sudo apt update
 	sudo aptitude install libgtk2.0-0:armhf libsdl2-image-2.0-0:armhf libsdl1.2debian:armhf libopenal1:armhf libvorbisfile3:armhf libgl1:armhf libjpeg62:armhf libcurl4:armhf libasound2-plugins:armhf -y
+	menuJammy
 }
 
 function libglu {
 	sudo apt -y install libglu1-mesa 
+	menuJammy
 }
 
 function all {

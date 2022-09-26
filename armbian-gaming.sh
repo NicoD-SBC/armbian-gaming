@@ -177,6 +177,8 @@ function box86Jammy {
 	sudo dpkg --add-architecture armhf
 	sudo apt update
 	sudo aptitude install libgtk2.0-0:armhf libsdl2-image-2.0-0:armhf libsdl1.2debian:armhf libopenal1:armhf libvorbisfile3:armhf libgl1:armhf libjpeg62:armhf libcurl4:armhf libasound2-plugins:armhf -y
+	sudo apt update
+	sudo aptitude upgrade
 	menuJammy
 }
 

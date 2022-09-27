@@ -82,6 +82,7 @@ function box64Jammy {
 	mkdir build; cd build; cmake .. -DRPI4ARM64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 	make -j4
 	sudo make install
+	menuJammy
 }
 
 function winex86 {
@@ -90,7 +91,7 @@ function winex86 {
 	sudo rm /usr/local/bin/wineserver
 	sudo rm /usr/local/bin/winecfg
 	sudo rm /usr/local/bin/wineboot
-	
+	sudo rm -r ~/.wine/
 	sudo cp wine /usr/local/bin/
 	sudo chmod +x /usr/local/bin/wine
 	echo "Copied wine to /usr/local/bin/ and given rights "
@@ -117,7 +118,8 @@ function winex86 {
 	echo " "
 	
 	echo "Download Wine 5.13 I686 https://sourceforge.net/projects/wine/files/Slackware%20Packages/5.13/i686/ "
-    echo "Copy content of /wine-5.13-i686-1sg/usr/ folder to ~/wine/ "
+	echo "Copy content of /wine-5.13-i686-1sg/usr/ folder to ~/wine/ "
+	echo "When done, test with box86 wine winecfg. "
 
 }
 
@@ -127,6 +129,7 @@ function wine64 {
 	mkdir wine
 	cd wine
 	tar xf ../PlayOnLinux-wine-6.0.1-upstream-linux-amd64.tar.gz
+	sudo rm -r ~/.wine/
 	sudo rm /usr/local/bin/wine
 	sudo rm /usr/local/bin/wine64
 	sudo rm /usr/local/bin/wineserver
@@ -138,7 +141,7 @@ function wine64 {
 	sudo ln -s $(pwd)/bin/winecfg /usr/local/bin/winecfg
 	sudo ln -s $(pwd)/bin/wineboot /usr/local/bin/wineboot
 	echo "Wine installed, test with : "
-	echo "wine winecfg "
+	echo "box64 wine winecfg "
 }
 
 function update {

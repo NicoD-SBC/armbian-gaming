@@ -72,6 +72,12 @@ function depN2 {
 }
 
 function winex86 {
+	sudo rm /usr/local/bin/wine
+	sudo rm /usr/local/bin/wine64
+	sudo rm /usr/local/bin/wineserver
+	sudo rm /usr/local/bin/winecfg
+	sudo rm /usr/local/bin/wineboot
+	
 	sudo cp wine /usr/local/bin/
 	sudo chmod +x /usr/local/bin/wine
 	echo "Copied wine to /usr/local/bin/ and given rights "

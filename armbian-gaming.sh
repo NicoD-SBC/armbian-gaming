@@ -108,6 +108,11 @@ function wine64 {
 	mkdir wine
 	cd wine
 	tar xf ../PlayOnLinux-wine-6.0.1-upstream-linux-amd64.tar.gz
+	sudo rm /usr/local/bin/wine
+	sudo rm /usr/local/bin/wine64
+	sudo rm /usr/local/bin/wineserver
+	sudo rm /usr/local/bin/winecfg
+	sudo rm /usr/local/bin/wineboot
 	sudo ln -s $(pwd)/bin/wine /usr/local/bin/wine
 	sudo ln -s $(pwd)/bin/wine64 /usr/local/bin/wine64
 	sudo ln -s $(pwd)/bin/wineserver /usr/local/bin/wineserver

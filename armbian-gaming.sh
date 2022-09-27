@@ -14,7 +14,7 @@ read choicevar
 if [ $choicevar -eq 1 ]
 	then 
 	libglu
-if [ $choicevar -eq 1 ]
+elif [ $choicevar -eq 2 ]
 	then 
 	box64Jammy
 elif [ $choicevar -eq 3 ]

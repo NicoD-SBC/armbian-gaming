@@ -4,26 +4,30 @@
 function menuJammy {
 echo "Please choose what you want to install! "
 echo "1. Install libglu1-mesa for Box64 on Jammy. "
-echo "2. Install box86. "
-echo "3. Install wine 64 files. "
-echo "4. Install wine x86 files. "
-echo "5. Exit "
+echo "2. Update Box64. "
+echo "3. Install/update box86. "
+echo "4. Install wine 64 files. "
+echo "5. Install wine x86 files. "
+echo "6. Exit "
 
 read choicevar
 if [ $choicevar -eq 1 ]
 	then 
 	libglu
-elif [ $choicevar -eq 2 ]
+if [ $choicevar -eq 1 ]
 	then 
-	box86Jammy
+	box64Jammy
 elif [ $choicevar -eq 3 ]
 	then 
-	wine64
+	box86Jammy
 elif [ $choicevar -eq 4 ]
+	then 
+	wine64
+elif [ $choicevar -eq 5 ]
 	then 
 	winex86
 
-elif [ $choicevar -eq 5 ]
+elif [ $choicevar -eq 6 ]
 	then
 	echo "Greetings, NicoD "
 	exit
@@ -69,6 +73,15 @@ fi
 
 function depN2 {
 	sudo apt install libavutil56:armhf libswresample3:armhf libavutil56:armhf libchromaprint1:armhf libavutil56:armhf libvdpau1:armhf
+}
+
+function box64Jammy {
+	cd ~
+	git clone https://github.com/ptitSeb/box64
+	cd box64
+	mkdir build; cd build; cmake .. -DRPI4ARM64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+	make -j4
+	sudo make install
 }
 
 function winex86 {
@@ -187,7 +200,7 @@ function box86Jammy {
 
 	sudo dpkg --add-architecture armhf
 	sudo apt update
-	sudo aptitude install libgtk2.0-0:armhf libsdl2-image-2.0-0:armhf libsdl1.2debian:armhf libopenal1:armhf libvorbisfile3:armhf libgl1:armhf libjpeg62:armhf libcurl4:armhf libasound2-plugins:armhf -y
+	sudo aptitude install mesa-va-drivers:armhf libgtk2.0-0:armhf libsdl2-image-2.0-0:armhf libsdl1.2debian:armhf libopenal1:armhf libvorbisfile3:armhf libgl1:armhf libjpeg62:armhf libcurl4:armhf libasound2-plugins:armhf -y
 	sudo apt update
 	sudo aptitude upgrade
 	menuJammy

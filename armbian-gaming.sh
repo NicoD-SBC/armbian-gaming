@@ -3,7 +3,7 @@
 
 function menuJammy {
 echo "Please choose what you want to install! "
-echo "1. Install libglu1-mesa for Box64 on Jammy. "
+echo "1. Install libglu1-mesa for Box64 on Jammy and Sid. "
 echo "2. Update Box64. "
 echo "3. Install/update box86. "
 echo "4. Install wine 64 files. "
@@ -223,7 +223,7 @@ function all {
 function distro {
 	echo "Choose your distro! "
 	echo "1. Armbian Hirsute "
-	echo "2. Armbian Jammy "
+	echo "2. Armbian Jammy/Sid "
 	
 	read choicevar
 if [ $choicevar -eq 1 ]

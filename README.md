@@ -8,7 +8,7 @@ Download and unzip and run script :
 /bin/bash ./armbian-gaming.sh (do not use sudo or root user)
 
 For winex86! Not needed for wine64 Jammy/Sid. 
-  Instal wine x86 packages with armbian-gaming 
+  Install wine x86 packages with armbian-gaming 
   Download Wine 5.13 I686 
   https://sourceforge.net/projects/wine/files/Slackware%20Packages/5.13/i686/
 

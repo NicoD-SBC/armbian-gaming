@@ -92,6 +92,7 @@ function winex86 {
 	sudo rm /usr/local/bin/winecfg
 	sudo rm /usr/local/bin/wineboot
 	sudo rm -r ~/.wine/
+	sudo rm -r ~/wine/
 	sudo cp wine /usr/local/bin/
 	sudo chmod +x /usr/local/bin/wine
 	echo "Copied wine to /usr/local/bin/ and given rights "
@@ -129,7 +130,9 @@ function wine64 {
 	mkdir wine
 	cd wine
 	tar xf ../PlayOnLinux-wine-6.0.1-upstream-linux-amd64.tar.gz
+	sudo rm PlayOnLinux-wine-6.0.1-upstream-linux-amd64.tar.gz
 	sudo rm -r ~/.wine/
+	sudo rm -r ~/wine/
 	sudo rm /usr/local/bin/wine
 	sudo rm /usr/local/bin/wine64
 	sudo rm /usr/local/bin/wineserver
@@ -161,6 +164,7 @@ function box86 {
 	sudo make install
 	cd ..
 	cd ..
+	rm -r box86/
 }
 
 function dependencies {	
@@ -189,6 +193,7 @@ function box64 {
 	sudo make install
 	cd ..
 	cd ..
+	sudo rm -r box64/
 }
 
 function box86Jammy {

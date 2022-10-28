@@ -126,14 +126,15 @@ function winex86 {
 }
 
 function wine64 {
+	sudo rm -r ~/.wine/
+	sudo rm -r ~/wine/
 	cd ~
 	wget https://www.playonlinux.com/wine/binaries/phoenicis/upstream-linux-amd64/PlayOnLinux-wine-6.0.1-upstream-linux-amd64.tar.gz
 	mkdir wine
 	cd wine
 	tar xf ../PlayOnLinux-wine-6.0.1-upstream-linux-amd64.tar.gz
+	cd ..
 	sudo rm PlayOnLinux-wine-6.0.1-upstream-linux-amd64.tar.gz
-	sudo rm -r ~/.wine/
-	sudo rm -r ~/wine/
 	sudo rm /usr/local/bin/wine
 	sudo rm /usr/local/bin/wine64
 	sudo rm /usr/local/bin/wineserver

@@ -1,7 +1,9 @@
 # armbian-gaming
 Tool to install gaming apps on Armbian Linux/Ubuntu/Debian arm64
 
-Beta version 0.2 : For Armbian Hirsute and Armbian Jammy and Sid
+Beta version 0.3 : For Armbian Hirsute and Armbian Jammy and Sid
+
+!!!NEW BUILD AND INSTALL PPSSPP FROM SOURCES!!!
 
 Download and unzip and run script : 
 

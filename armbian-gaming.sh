@@ -8,7 +8,8 @@ echo "2. Update Box64. "
 echo "3. Install/update box86. "
 echo "4. Install wine 64 files. "
 echo "5. Install wine x86 files. "
-echo "6. Exit "
+echo "6. Build and install PPSSPP. "
+echo "7. Exit "
 
 read choicevar
 if [ $choicevar -eq 1 ]
@@ -26,14 +27,28 @@ elif [ $choicevar -eq 4 ]
 elif [ $choicevar -eq 5 ]
 	then 
 	winex86
-
 elif [ $choicevar -eq 6 ]
+	then 
+	installPPSSPP
+elif [ $choicevar -eq 7 ]
 	then
 	echo "Greetings, NicoD "
 	exit
 else 
 	echo "Invalid choice. "
 fi
+}
+
+function installPPSSPP {
+	git clone --recurse-submodules https://github.com/hrydgard/ppsspp.git
+	cd ppsspp
+	git pull --rebase https://github.com/hrydgard/ppsspp.git
+	git submodule update --init --recursive
+	sudo apt -y install build-essential cmake libgl1-mesa-dev libsdl2-dev libvulkan-dev
+	/bin/bash ./b.sh
+	cd build
+	make
+	sudo make install
 }
 
 function menuHirsute {

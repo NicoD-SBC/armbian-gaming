@@ -76,6 +76,7 @@ function depN2 {
 }
 
 function box64Jammy {
+	sudo apt -y install cmake
 	cd ~
 	git clone https://github.com/ptitSeb/box64
 	cd box64
@@ -152,6 +153,7 @@ function update {
 }
 
 function box86 {
+	sudo apt -y install cmake
 	sudo dpkg --add-architecture armhf
 	update
 	dependencies

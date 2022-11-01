@@ -40,6 +40,7 @@ fi
 }
 
 function installPPSSPP {
+	cd ~
 	git clone --recurse-submodules https://github.com/hrydgard/ppsspp.git
 	cd ppsspp
 	git pull --rebase https://github.com/hrydgard/ppsspp.git

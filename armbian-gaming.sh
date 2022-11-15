@@ -4,7 +4,7 @@
 function menuJammy {
 echo "Please choose what you want to install! "
 echo "1. Install libglu1-mesa for Box64 on Jammy and Sid. "
-echo "2. Update Box64. "
+echo "2. Install/Update Box64. "
 echo "3. Install/update box86. "
 echo "4. Install wine 64 files. "
 echo "5. Install wine x86 files. "

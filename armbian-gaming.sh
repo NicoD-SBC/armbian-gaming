@@ -92,7 +92,7 @@ function depN2 {
 }
 
 function box64Jammy {
-	sudo apt -y install cmake
+	sudo apt -y install cmake libsdl1.2debian
 	cd ~
 	git clone https://github.com/ptitSeb/box64
 	cd box64

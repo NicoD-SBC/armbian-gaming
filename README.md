@@ -1,9 +1,11 @@
 # armbian-gaming
 Tool to install gaming apps on Armbian Linux/Ubuntu/Debian arm64
 
-Beta version 0.3 : For Armbian Hirsute and Armbian Jammy and Sid
+Beta version 0.4 : For Armbian Hirsute and Armbian Jammy and Sid
 
 !!!NEW BUILD AND INSTALL PPSSPP FROM SOURCES!!!
+!!!NOW ALSO POSSIBLE TO BUILD XONOTIC!!!
+
 
 Download and unzip and run script : 
 
@@ -18,3 +20,10 @@ For winex86! Not needed for wine64 Jammy/Sid.
 
 ! Only install one wine version. Delete ~/wine if you want to install another version. !
 Hidden ./wine will automaticaly be removed. 
+
+
+After building Xonotic you go to the directory : 
+cd ~/xonotic
+
+To run Xonotic :
+./all run

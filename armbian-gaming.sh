@@ -9,7 +9,8 @@ echo "3. Install/update box86. "
 echo "4. Install wine 64 files. "
 echo "5. Install wine x86 files. "
 echo "6. Build and install PPSSPP. "
-echo "7. Exit "
+echo "7. Build Xonotic. "
+echo "8. Exit "
 
 read choicevar
 if [ $choicevar -eq 1 ]
@@ -31,12 +32,25 @@ elif [ $choicevar -eq 6 ]
 	then 
 	installPPSSPP
 elif [ $choicevar -eq 7 ]
+	then 
+	buildXonotic
+elif [ $choicevar -eq 8 ]
 	then
 	echo "Greetings, NicoD "
 	exit
 else 
 	echo "Invalid choice. "
 fi
+}
+
+function buildXonotic {
+	cd ~
+	sudo apt-get -y install autoconf automake build-essential curl git libtool libgmp-dev libjpeg-turbo8-dev libsdl2-dev libxpm-dev xserver-xorg-dev zlib1g-dev unzip zip
+	git clone https://gitlab.com/xonotic/xonotic.git  # download main repo
+	cd xonotic
+	./all update -l best
+	./all compile -r
+	echo "Xonotic is compiled. Start with ./all run. "
 }
 
 function installPPSSPP {

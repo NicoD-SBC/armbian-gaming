@@ -1,9 +1,9 @@
 # armbian-gaming
 Tool to install gaming apps on Armbian Linux/Ubuntu/Debian arm64
 
-Beta version 0.4 : For Armbian Hirsute and Armbian Jammy and Sid
+Beta version 0.5 : For Armbian Hirsute and Armbian Jammy and Sid
 
-!!!NEW BUILD AND INSTALL PPSSPP FROM SOURCES!!!
+!!!NEW BUILD AND INSTALL PPSSPP and Dolphin FROM SOURCES!!!
 !!!NOW ALSO POSSIBLE TO BUILD XONOTIC!!!
 
 
@@ -27,3 +27,6 @@ cd ~/xonotic
 
 To run Xonotic :
 ./all run
+
+To open dolphin type :
+dolphing-emu

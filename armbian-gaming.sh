@@ -8,10 +8,11 @@ echo "2. Install/Update Box64. "
 echo "3. Install/update box86. "
 echo "4. Install wine 64 files. "
 echo "5. Install wine x86 files. "
-echo "6. Build and install PPSSPP. "
-echo "7. Build and install Dolphin emulator. "
-echo "8. Build Xonotic. "
-echo "9. Exit "
+echo "6. Install winetricks. "
+echo "7. Build and install PPSSPP. "
+echo "8. Build and install Dolphin emulator. "
+echo "9. Build Xonotic. "
+echo "10. Exit "
 
 read choicevar
 if [ $choicevar -eq 1 ]
@@ -31,14 +32,17 @@ elif [ $choicevar -eq 5 ]
 	winex86
 elif [ $choicevar -eq 6 ]
 	then 
-	installPPSSPP
+	winetricks
 elif [ $choicevar -eq 7 ]
 	then 
-	buildDolphin
+	installPPSSPP
 elif [ $choicevar -eq 8 ]
 	then 
-	buildXonotic
+	buildDolphin
 elif [ $choicevar -eq 9 ]
+	then 
+	buildXonotic
+elif [ $choicevar -eq 10 ]
 	then
 	echo "Greetings, NicoD "
 	exit
@@ -66,6 +70,29 @@ function buildDolphin {
 	cmake ..
 	make -j$(nproc)
 	sudo make install
+}
+function winetricks {
+	cd ~
+	sudo dpkg --add-architecture armhf
+	sudo apt update
+	sudo apt install libxinerama-dev:armhf libxrandr-dev:armhf libxcomposite-dev:armhf libxi-dev:armhf libxcursor-dev:armhf mesa-va-drivers:armhf libc6:armhf libx11-6:armhf libgdk-pixbuf2.0-0:armhf libgl1-mesa-dev:armhf
+	libavcodec58:armhf libavformat58:armhf libpng16-16:armhf libcal3d12v5:armhf libopenal1:armhf libvorbis-dev:armhf libcurl4:armhf osspd:armhf libjpeg62:armhf libudev1:armhf libsnappy1v5:armhf
+	libsmpeg0:armhf libmyguiengine3debian1v5:armhf libqt5core5a:armhf 
+	assuming downloaded wine in /home/wine
+	sudo ln -s ~/wine/bin/wine /usr/local/bin/wine
+	sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg
+	sudo ln -s ~/wine/bin/wineserver /usr/local/bin/wineserver
+	wget https://raw.githubusercontent.com/Winetricks/winetricks/master/src/winetricks
+	sudo chmod +x winetricks
+	sudo cp winetricks /usr/local/bin
+	sudo apt install cabextract -y
+	BOX86_NOBANNER=1 winetricks dotnet20sp2
+	BOX86_NOBANNER=1 winetricks corefonts
+	BOX86_NOBANNER=1 winetricks d3dx9
+	BOX86_NOBANNER=1 winetricks quartz
+	BOX86_NOBANNER=1 winetricks mfc42
+	BOX86_NOBANNER=1 winetricks msxml4
+	BOX86_NOBANNER=1 winetricks cnc_ddraw
 }
 
 function installPPSSPP {

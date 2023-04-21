@@ -183,21 +183,21 @@ function update {
 }
 
 function box86 {
-	sudo apt -y install cmake
-	sudo dpkg --add-architecture armhf
-	update
-	dependencies
+	sudo apt -y install libc6-dev-armhf-cross git cmake gcc-arm-linux-gnueabihf 
 	cd ~
-	git clone https://github.com/ptitSeb/box86.git	
-	cd box86/
-	mkdir build
-	cd build
- 	chooseBoard
- 	sudo make -j4
+	git clone https://github.com/ptitSeb/box86
+	cd box86
+	chooseBoard
+	make -j2
 	sudo make install
-	cd ..
-	cd ..
-	rm -r box86/
+	sudo systemctl restart systemd-binfmt
+
+	sudo dpkg --add-architecture armhf
+	sudo apt update
+	sudo aptitude install mesa-va-drivers:armhf libgtk2.0-0:armhf libsdl2-image-2.0-0:armhf libsdl1.2debian:armhf libopenal1:armhf libvorbisfile3:armhf libgl1:armhf libjpeg62:armhf libcurl4:armhf libasound2-plugins:armhf -y
+	sudo apt update
+	sudo aptitude upgrade
+	menuJammy
 }
 
 function dependencies {	

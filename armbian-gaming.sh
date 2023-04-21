@@ -160,12 +160,13 @@ function box86 {
 	sudo dpkg --add-architecture armhf
 	update
 	dependencies
+	cd ~
 	git clone https://github.com/ptitSeb/box86.git	
 	cd box86/
 	mkdir build
 	cd build
-	sudo cmake .. -DRK3399=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
-	sudo make -j4
+ 	chooseBoard
+ 	sudo make -j4
 	sudo make install
 	cd ..
 	cd ..

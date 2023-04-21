@@ -210,11 +210,13 @@ elif [ $boardchoicevar -eq 3 ]
 	N2
 elif [ $boardchoicevar -eq 4 ]
 	then 
+	rpi3
 elif [ $boardchoicevar -eq 5 ]
 	then 
 	rpi4
 elif [ $boardchoicevar -eq 6 ]
 	then 
+	other
 elif [ $boardchoicevar -eq 7 ]
 	then
 	echo "Greetings, NicoD "

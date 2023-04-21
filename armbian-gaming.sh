@@ -32,7 +32,7 @@ elif [ $choicevar -eq 5 ]
 	winex86
 elif [ $choicevar -eq 6 ]
 	then 
-	winetricks
+	winetricksInstall
 elif [ $choicevar -eq 7 ]
 	then 
 	installPPSSPP
@@ -71,7 +71,7 @@ function buildDolphin {
 	make -j$(nproc)
 	sudo make install
 }
-function winetricks {
+function winetricksInstall {
 	cd ~
 	sudo dpkg --add-architecture armhf
 	sudo apt update

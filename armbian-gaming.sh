@@ -9,8 +9,9 @@ echo "3. Install/update box86. "
 echo "4. Install wine 64 files. "
 echo "5. Install wine x86 files. "
 echo "6. Build and install PPSSPP. "
-echo "7. Build Xonotic. "
-echo "8. Exit "
+echo "7. Build and install Dolphin emulator. "
+echo "8. Build Xonotic. "
+echo "9. Exit "
 
 read choicevar
 if [ $choicevar -eq 1 ]
@@ -33,8 +34,11 @@ elif [ $choicevar -eq 6 ]
 	installPPSSPP
 elif [ $choicevar -eq 7 ]
 	then 
-	buildXonotic
+	buildDolphin
 elif [ $choicevar -eq 8 ]
+	then 
+	buildXonotic
+elif [ $choicevar -eq 9 ]
 	then
 	echo "Greetings, NicoD "
 	exit
@@ -51,6 +55,17 @@ function buildXonotic {
 	./all update -l best
 	./all compile -r
 	echo "Xonotic is compiled. Start with ./all run. "
+}
+
+function buildDolphin {
+	sudo apt -y install --no-install-recommends git ca-certificates qtbase5-dev qtbase5-private-dev git cmake make gcc g++ pkg-config libavcodec-dev libavformat-dev libavutil-dev libswscale-dev libxi-dev libxrandr-dev libudev-dev libevdev-dev libsfml-dev libminiupnpc-dev libmbedtls-dev libcurl4-openssl-dev libhidapi-dev libsystemd-dev libbluetooth-dev libasound2-dev libpulse-dev libpugixml-dev libbz2-dev libzstd-dev liblzo2-dev libpng-dev libusb-1.0-0-dev gettext
+	git clone https://github.com/dolphin-emu/dolphin.git dolphin-emu
+	cd ./dolphin-emu
+	git submodule update --init --recursive
+	mkdir Build && cd Build
+	cmake ..
+	make -j$(nproc)
+	sudo make install
 }
 
 function installPPSSPP {

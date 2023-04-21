@@ -154,7 +154,9 @@ function winex86 {
 	wget https://github.com/Kron4ek/Wine-Builds/releases/download/7.15/wine-7.15-x86.tar.xz
 	sudo apt -y install xz tar
 	xz -d wine-7.15-x86.tar.xz
-	tar -xf ../wine-7.15-x86.tar
+	tar -xf wine-7.15-x86.tar
+	cd wine-7.15-x86/
+	cp -R * ~/wine
 	sudo ln -s ~/wine/bin/wine /usr/local/bin/wine
 	sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg
 	sudo ln -s ~/wine/bin/wineserver /usr/local/bin/wineserver

@@ -3,6 +3,7 @@ Tool to install gaming apps on Armbian Linux/Ubuntu/Debian arm64
 
 Beta version 0.5 : For Armbian Hirsute and Armbian Jammy and Sid
 
+!!!NEW Install Winetricks, see below for more info!!!
 !!!NEW BUILD AND INSTALL PPSSPP and Dolphin FROM SOURCES!!!
 !!!NOW ALSO POSSIBLE TO BUILD XONOTIC!!!
 
@@ -20,6 +21,13 @@ For winex86! Not needed for wine64 Jammy/Sid.
 
 ! Only install one wine version. Delete ~/wine if you want to install another version. !
 Hidden ./wine will automaticaly be removed. 
+
+When installing winetricks it may get stuck at the end at : 
+"0078:err:richedit:ReadStyleSheet skipping optional destination
+0078:err:richedit:ReadStyleSheet skipping optional destination"
+When that happens, open a 2nd terminal and type :
+wineserver -k
+
 
 
 After building Xonotic you go to the directory : 

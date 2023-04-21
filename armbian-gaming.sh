@@ -22,7 +22,7 @@ elif [ $choicevar -eq 2 ]
 	box64
 elif [ $choicevar -eq 3 ]
 	then 
-	box86Jammy
+	box86
 elif [ $choicevar -eq 4 ]
 	then 
 	wine64

@@ -93,6 +93,7 @@ function winetricks {
 	BOX86_NOBANNER=1 winetricks mfc42
 	BOX86_NOBANNER=1 winetricks msxml4
 	BOX86_NOBANNER=1 winetricks cnc_ddraw
+	menuJammy
 }
 
 function installPPSSPP {

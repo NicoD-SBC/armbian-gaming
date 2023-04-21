@@ -117,6 +117,7 @@ function depN2 {
 
 
 function winex86 {
+	
 	sudo rm /usr/local/bin/wine
 	sudo rm /usr/local/bin/wine64
 	sudo rm /usr/local/bin/wineserver
@@ -149,9 +150,14 @@ function winex86 {
 	echo "Created wine folder and copied libwine.so and libwine.so.1 "
 	echo " "
 	
-	echo "Download Wine 5.13 I686 https://sourceforge.net/projects/wine/files/Slackware%20Packages/5.13/i686/ "
-	echo "Copy content of /wine-5.13-i686-1sg/usr/ folder to ~/wine/ "
-	echo "When done, test with box86 wine winecfg. "
+	cd ~/wine/
+	wget https://github.com/Kron4ek/Wine-Builds/releases/download/7.15/wine-7.15-x86.tar.xz
+	sudo apt -y install xz tar
+	xz -d wine-7.15-x86.tar.xz
+	tar -xf ../wine-7.15-x86.tar
+	sudo ln -s ~/wine/bin/wine /usr/local/bin/wine
+	sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg
+	sudo ln -s ~/wine/bin/wineserver /usr/local/bin/wineserver
 
 }
 

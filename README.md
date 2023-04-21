@@ -1,7 +1,8 @@
 # armbian-gaming
 Tool to install gaming apps on Armbian Linux/Ubuntu/Debian arm64
 
-Beta version 0.5 : For Armbian Hirsute and Armbian Jammy and Sid
+Beta version 0.5 : For Armbian Jammy
+Might work on other Armbian versions, but no support for them.
 
 !!!NEW Install Winetricks, see below for more info!!!
 !!!NEW BUILD AND INSTALL PPSSPP and Dolphin FROM SOURCES!!!
@@ -15,7 +16,7 @@ Download and unzip and run script :
 
 ! Only install one wine version. Delete ~/wine if you want to install another version. !
 Hidden ./wine will automaticaly be removed. 
-I advice to use the x86 wine version. 
+I advice to use the x86 7.15 wine version. 
 
 
 When installing winetricks it may get stuck at the end at : 

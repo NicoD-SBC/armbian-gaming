@@ -200,22 +200,20 @@ echo "7. Exit "
 read boardchoicevar
 if [ $boardchoicevar -eq 1 ]
 	then 
-	mkdir build; cd build; cmake .. -DRK3399=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+	rk3399
 elif [ $boardchoicevar -eq 2 ]
 	then 
-	mkdir build; cd build; cmake .. -DRK3588=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+	rk3588
 elif [ $boardchoicevar -eq 3 ]
 	then 
-	mkdir build; cd build; cmake .. -DODROIDN2=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+	N2
 elif [ $boardchoicevar -eq 4 ]
 	then 
-	mkdir build; cd build; cmake .. -DRPI3ARM64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 elif [ $boardchoicevar -eq 5 ]
 	then 
-	mkdir build; cd build; cmake .. -DRPI4ARM64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+	rpi4
 elif [ $boardchoicevar -eq 6 ]
 	then 
-	mkdir build; cd build; cmake .. -DLARCH64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
 elif [ $boardchoicevar -eq 7 ]
 	then
 	echo "Greetings, NicoD "
@@ -225,6 +223,47 @@ else
 fi
 }
 
+function other {
+	mkdir build 
+	cd build 
+	sudo apt -y install cmake
+	cmake .. -DLARCH64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+}
+
+function rpi4 {
+	mkdir build 
+	cd build 
+	sudo apt -y install cmake
+	cmake .. -DRPI4ARM64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+}
+
+function rpi3 {
+	mkdir build 
+	cd build 
+	sudo apt -y install cmake
+	cmake .. -DRPI3ARM64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+}
+
+function N2 {
+	mkdir build 
+	cd build 
+	sudo apt -y install cmake
+	cmake .. -DODROIDN2=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+}
+
+function rk3588 {
+	mkdir build 
+	cd build 
+	sudo apt -y install cmake
+	cmake .. -DRK3588=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+}
+
+function rk3399 {
+	mkdir build 
+	cd build 
+	sudo apt -y install cmake
+	cmake .. -DRK3399=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+}
 
 
 function box64 {

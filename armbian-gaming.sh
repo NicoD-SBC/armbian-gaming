@@ -19,7 +19,7 @@ if [ $choicevar -eq 1 ]
 	libglu
 elif [ $choicevar -eq 2 ]
 	then 
-	box64Jammy
+	box64
 elif [ $choicevar -eq 3 ]
 	then 
 	box86Jammy
@@ -81,55 +81,12 @@ function installPPSSPP {
 	sudo make install
 }
 
-function menuHirsute {
-echo "Hello. Please choose what you want to install ! "
-echo "1. Install all "
-echo "2. Install Box86 "
-echo "3. Install Box64 "
-echo "4. Install Wine x86 "
-echo "5. Install dependencies for N2/N2+ before Box86 install "
-echo "6. Exit armbian-gaming "
-
-read choicevar
-
-if [ $choicevar -eq 1 ]
-	then 
-	all
-elif [ $choicevar -eq 2 ]
-	then 
-	box86
-elif [ $choicevar -eq 3 ]
-	then 
-	box64
-elif [ $choicevar -eq 4 ]
-	then 
-	winex86
-elif [ $choicevar -eq 5 ]
-	then 
-	depN2
-elif [ $choicevar -eq 6 ]
-	then
-	echo "Greetings, NicoD "
-	exit
-else 
-	echo "Invalid choice. "
-fi
-}
 
 function depN2 {
 	sudo apt install libavutil56:armhf libswresample3:armhf libavutil56:armhf libchromaprint1:armhf libavutil56:armhf libvdpau1:armhf
 }
 
-function box64Jammy {
-	sudo apt -y install cmake libsdl1.2debian
-	cd ~
-	git clone https://github.com/ptitSeb/box64
-	cd box64
-	mkdir build; cd build; cmake .. -DRPI4ARM64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
-	make -j4
-	sudo make install
-	menuJammy
-}
+
 
 function winex86 {
 	sudo rm /usr/local/bin/wine
@@ -229,66 +186,66 @@ function dependenciesFix {
 	 sudo apt -y --fix-broken install
 }
 
-function box64 {
-	git clone https://github.com/ptitSeb/box64
-	cd box64
-	mkdir build
-	cd build
-	sudo apt -y install linux-libc-dev
-	sudo apt -y install build-essential 
-	sudo cmake .. -DRK3399=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
-	sudo make -j4
-	sudo make install
-	cd ..
-	cd ..
-	sudo rm -r box64/
-}
 
-function box86Jammy {
-	sudo apt -y install libc6-dev-armhf-cross git cmake gcc-arm-linux-gnueabihf 
-	cd ~
-	git clone https://github.com/ptitSeb/box86
-	cd box86
+function chooseBoard {
+echo "Please choose what you want to install! "
+echo "1. RK3399 "
+echo "2. RK3588(S). "
+echo "3. Odroid N2(+) "
+echo "4. Raspberry Pi 3(A/B/+). "
+echo "5. Raspberry Pi 4(400). "
+echo "6. Other ARM64 "
+echo "7. Exit "
+
+read boardchoicevar
+if [ $boardchoicevar -eq 1 ]
+	then 
+	mkdir build; cd build; cmake .. -DRK3399=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+elif [ $boardchoicevar -eq 2 ]
+	then 
+	mkdir build; cd build; cmake .. -DRK3588=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+elif [ $boardchoicevar -eq 3 ]
+	then 
+	mkdir build; cd build; cmake .. -DODROIDN2=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+elif [ $boardchoicevar -eq 4 ]
+	then 
+	mkdir build; cd build; cmake .. -DRPI3ARM64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+elif [ $boardchoicevar -eq 5 ]
+	then 
 	mkdir build; cd build; cmake .. -DRPI4ARM64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
-	make -j2
-	sudo make install
-	sudo systemctl restart systemd-binfmt
-
-	sudo dpkg --add-architecture armhf
-	sudo apt update
-	sudo aptitude install mesa-va-drivers:armhf libgtk2.0-0:armhf libsdl2-image-2.0-0:armhf libsdl1.2debian:armhf libopenal1:armhf libvorbisfile3:armhf libgl1:armhf libjpeg62:armhf libcurl4:armhf libasound2-plugins:armhf -y
-	sudo apt update
-	sudo aptitude upgrade
-	menuJammy
+elif [ $boardchoicevar -eq 6 ]
+	then 
+	mkdir build; cd build; cmake .. -DLARCH64=1 -DCMAKE_BUILD_TYPE=RelWithDebInfo
+elif [ $boardchoicevar -eq 7 ]
+	then
+	echo "Greetings, NicoD "
+	exit
+else 
+	echo "Invalid choice. "
+fi
 }
+
+
+
+function box64 {
+    cd ~
+    git clone https://github.com/ptitSeb/box64
+    cd box64
+    chooseBoard
+    make -j4
+    sudo make install
+    menuJammy
+}
+
+
 
 function libglu {
 	sudo apt -y install libglu1-mesa 
 	menuJammy
 }
 
-function all {
-	box86
-	box64
-	winex86
-}
-
 function distro {
-	echo "Choose your distro! "
-	echo "1. Armbian Hirsute "
-	echo "2. Armbian Jammy/Sid "
-	
-	read choicevar
-if [ $choicevar -eq 1 ]
-	then 
-	menuHirsute
-elif [ $choicevar -eq 2 ]
-	then 
 	menuJammy
-else 
-	echo "Invalid choice. Exiting script! "
-	exit
-fi
 }
 
 distro

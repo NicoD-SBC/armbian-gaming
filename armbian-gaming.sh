@@ -152,7 +152,7 @@ function winex86 {
 	
 	cd ~/wine/
 	wget https://github.com/Kron4ek/Wine-Builds/releases/download/7.15/wine-7.15-x86.tar.xz
-	sudo apt -y install xz tar
+	sudo apt -y install xz-utils tar
 	xz -d wine-7.15-x86.tar.xz
 	tar -xf wine-7.15-x86.tar
 	cd wine-7.15-x86/

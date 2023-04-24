@@ -5,7 +5,7 @@ Beta version 0.5 : For Armbian Jammy
 Might work on other Armbian versions, but no support for them.
 
 !!!NEW Install Winetricks, see below for more info!!!
-!!!NEW BUILD AND INSTALL PPSSPP and Dolphin FROM SOURCES!!!
+!!!NEW BUILD AND INSTALL PPSSPP FROM SOURCES!!!
 !!!NOW ALSO POSSIBLE TO BUILD XONOTIC!!!
 
 
@@ -33,5 +33,6 @@ cd ~/xonotic
 To run Xonotic :
 ./all run
 
-To open dolphin type :
+To open dolphin type :  
 dolphing-emu
+Dolphin has a bug I need to fix. If anyone knows the fix, let me know.

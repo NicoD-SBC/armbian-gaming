@@ -10,7 +10,8 @@ echo "4. Install wine 64 files. "
 echo "5. Install wine x86 files. "
 echo "6. Install winetricks. "
 echo "7. Build and install PPSSPP. "
-echo "8. Build and install Dolphin emulator. "
+# echo "8. Build and install Dolphin emulator. "
+echo "8. Install Malior-droid Android emulator. "
 echo "9. Build Xonotic. "
 echo "10. Exit "
 
@@ -36,9 +37,13 @@ elif [ $choicevar -eq 6 ]
 elif [ $choicevar -eq 7 ]
 	then 
 	installPPSSPP
+# elif [ $choicevar -eq 8 ]
+#	then 
+#	buildDolphin
+
 elif [ $choicevar -eq 8 ]
 	then 
-	buildDolphin
+	installMaliorDroid
 elif [ $choicevar -eq 9 ]
 	then 
 	buildXonotic
@@ -49,6 +54,29 @@ elif [ $choicevar -eq 10 ]
 else 
 	echo "Invalid choice. "
 fi
+}
+
+function installMaliorDroid {
+	echo "Installing Malior-Droid! Thanks to monkaBlyat! "
+	sudo apt -y install docker docker.io adb
+	sudo mkdir /dev/binderfs
+	sudo mount -t binder binder /dev/binderfs
+	wget -O - https://github.com/ChisBread/malior/raw/main/install.sh > /tmp/malior-install.sh && bash /tmp/malior-install.sh  && rm /tmp/malior-install.sh 
+	malior update
+	malior install malior-droid
+	malior-droid update
+
+	#install scrpy version 2.0 that is needed for audio forwarding from the android docker container
+
+	# for Debian/Ubuntu
+	sudo apt -y install ffmpeg libsdl2-2.0-0 adb wget gcc git pkg-config meson ninja-build libsdl2-dev libavcodec-dev libavdevice-dev libavformat-dev libavutil-dev libswresample-dev libusb-1.0-0 libusb-1.0-0-dev
+
+	git clone https://github.com/Genymobile/scrcpy
+	cd scrcpy
+	./install_release.sh
+	echo "To use : "
+	echo "adb connect localhost:5555 "
+	echo "scrcpy -s localhost:5555 "
 }
 
 function buildXonotic {

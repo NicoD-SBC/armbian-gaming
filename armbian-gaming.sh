@@ -57,7 +57,7 @@ fi
 }
 
 function installMaliorDroid {
-	echo "Installing Malior-Droid! Thanks to monkaBlyat! "
+	echo "Installing Malior-Droid! Thanks to monkaBlyat and ChisBread! "
 	sudo apt -y install docker docker.io adb
 	sudo mkdir /dev/binderfs
 	sudo mount -t binder binder /dev/binderfs

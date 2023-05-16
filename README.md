@@ -25,18 +25,23 @@ When installing winetricks it may get stuck at the end at :
 "0078:err:richedit:ReadStyleSheet skipping optional destination
 0078:err:richedit:ReadStyleSheet skipping optional destination"
 
-When that happens, open a 2nd terminal and type : wineserver -k
+When that happens, open a 2nd terminal and type : 
+  wineserver -k
 
 
 After building Xonotic you go to the directory : 
-cd ~/xonotic
+  cd ~/xonotic
 
 To run Xonotic :
-./all run
+  ./all run
 
 To use Malior-droid :
-adb connect localhost:5555
-scrcpy -s localhost:5555
+  adb connect localhost:5555
+  scrcpy -s localhost:5555
+
+If Malior-droid doesn't work use this :
+  malior-droid stop
+  malior-droid start
 
 To open dolphin type :  (removed dolphin for now until I can fix it)
 dolphing-emu

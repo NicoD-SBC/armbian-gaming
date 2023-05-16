@@ -17,7 +17,8 @@ Download and unzip and run script :
 ! Only install one wine version. Delete ~/wine if you want to install another version. !
 Hidden ./wine will automaticaly be removed. 
 I advice to use the x86 7.15 wine version. 
-
+If you want to download another version. Put the "bin, "lib" and "share" folders into ~/wine
+And run "wine winecfg"
 
 When installing winetricks it may get stuck at the end at : 
 

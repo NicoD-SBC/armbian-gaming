@@ -3,12 +3,13 @@
 
 function menuJammy {
 echo "Please choose what you want to install! "
-echo "1. Install libglu1-mesa for Box64 on Jammy and Sid. "
-echo "2. Install/Update Box64. "
-echo "3. Install/update box86. "
-echo "4. Install wine 64 files. "
-echo "5. Install wine x86 files. "
-echo "6. Install winetricks. "
+
+echo "1. Install/Update Box64. "
+echo "2. Install/update box86. "
+echo "3. Install wine 64 files. "
+echo "4. Install wine x86 files. "
+echo "5. Install winetricks. "
+echo "6. Install steam. "
 echo "7. Build and install PPSSPP. "
 # echo "8. Build and install Dolphin emulator. "
 echo "8. Install Malior-droid Android emulator. "
@@ -18,22 +19,22 @@ echo "10. Exit "
 read choicevar
 if [ $choicevar -eq 1 ]
 	then 
-	libglu
+	box64
 elif [ $choicevar -eq 2 ]
 	then 
-	box64
+	box86
 elif [ $choicevar -eq 3 ]
 	then 
-	box86
+	wine64
 elif [ $choicevar -eq 4 ]
 	then 
-	wine64
+	winex86
 elif [ $choicevar -eq 5 ]
 	then 
-	winex86
-elif [ $choicevar -eq 6 ]
-	then 
 	winetricksInstall
+elif [ $choicevar -eq 6 ]
+	then
+	installSteam
 elif [ $choicevar -eq 7 ]
 	then 
 	installPPSSPP
@@ -77,6 +78,12 @@ function installMaliorDroid {
 	echo "To use : "
 	echo "adb connect localhost:5555 "
 	echo "scrcpy -s localhost:5555 "
+}
+functions installSteam {
+	cd ~/box86
+	/bin/bash ./install_steam.sh
+	cd ~
+	menuJammy
 }
 
 function buildXonotic {
@@ -334,21 +341,16 @@ function rk3399 {
 
 
 function box64 {
-    cd ~
-    git clone https://github.com/ptitSeb/box64
-    cd box64
-    chooseBoard
-    make -j4
-    sudo make install
-    menuJammy
-}
-
-
-
-function libglu {
 	sudo apt -y install libglu1-mesa 
+	cd ~
+	git clone https://github.com/ptitSeb/box64
+	cd box64
+	chooseBoard
+	make -j4
+	sudo make install
 	menuJammy
 }
+
 
 function distro {
 	menuJammy

@@ -3,7 +3,6 @@
 
 function menuJammy {
 echo "Please choose what you want to install! "
-
 echo "1. Install/Update Box64. "
 echo "2. Install/update box86. "
 echo "3. Install wine 64 files. "
@@ -79,7 +78,7 @@ function installMaliorDroid {
 	echo "adb connect localhost:5555 "
 	echo "scrcpy -s localhost:5555 "
 }
-functions installSteam {
+function installSteam {
 	cd ~/box86
 	/bin/bash ./install_steam.sh
 	cd ~

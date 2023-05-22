@@ -12,8 +12,9 @@ echo "6. Install steam. "
 echo "7. Build and install PPSSPP. "
 # echo "8. Build and install Dolphin emulator. "
 echo "8. Install Malior-droid Android emulator. "
-echo "9. Build Xonotic. "
-echo "10. Exit "
+echo "9. Build Duckstation PS1 emulator. "
+echo "10. Build Xonotic. "
+echo "11. Exit "
 
 read choicevar
 if [ $choicevar -eq 1 ]
@@ -46,14 +47,34 @@ elif [ $choicevar -eq 8 ]
 	installMaliorDroid
 elif [ $choicevar -eq 9 ]
 	then 
-	buildXonotic
+	installDuckstation
 elif [ $choicevar -eq 10 ]
+	then 
+	buildXonotic
+elif [ $choicevar -eq 11 ]
 	then
 	echo "Greetings, NicoD "
 	exit
 else 
 	echo "Invalid choice. "
 fi
+}
+
+function installDuckstation {
+	##install-dependencies
+
+	sudo apt install qt6-tools-dev-tools qt6-l10n-tools libsdl2-dev libxrandr-dev pkg-config cmake qt6-base-dev qt6-base-private-dev qt6-base-dev-tools qt6-tools-dev libqt6svg6 libevdev-dev git libwayland-dev libwayland-egl-backend-dev extra-cmake-modules qt6-wayland libcurl4-gnutls-dev libgbm-dev libdrm-dev ninja-build -y
+
+	##git clone source
+	cd ~
+	git clone https://github.com/stenzek/duckstation.git 
+	cd duckstation/
+	mkdir build-release
+	cd build-release
+	cmake -DCMAKE_BUILD_TYPE=Release -GNinja ..
+	ninja
+	echo "Run with cd ~/duckstation/build-release/bin "
+	echo "./duckstation-qt "
 }
 
 function installMaliorDroid {

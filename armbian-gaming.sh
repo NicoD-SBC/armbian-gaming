@@ -1,4 +1,5 @@
 #!/bin/bash
+version="1.0"
 
 
 function menuJammy {
@@ -13,8 +14,9 @@ echo "7. Build and install PPSSPP. "
 # echo "8. Build and install Dolphin emulator. "
 echo "8. Install Malior-droid Android emulator. "
 echo "9. Build Duckstation PS1 emulator. "
-echo "10. Build Xonotic. "
-echo "11. Exit "
+echo "10. Download Aethersx2 PS2 emulator. " 
+echo "11. Build Xonotic. "
+echo "12. Exit "
 
 read choicevar
 if [ $choicevar -eq 1 ]
@@ -48,16 +50,27 @@ elif [ $choicevar -eq 8 ]
 elif [ $choicevar -eq 9 ]
 	then 
 	installDuckstation
-elif [ $choicevar -eq 10 ]
+elif [ $choicevar -eq 9 ]
+	then 
+	installAethersx2
+elif [ $choicevar -eq 11 ]
 	then 
 	buildXonotic
-elif [ $choicevar -eq 11 ]
+elif [ $choicevar -eq 12 ]
 	then
 	echo "Greetings, NicoD "
 	exit
 else 
 	echo "Invalid choice. "
 fi
+}
+
+function installAethersx2 {
+	cd ~
+	wget https://www.aethersx2.com/archive/desktop/linux/AetherSX2-v1.5-3606.AppImage
+	chmod +x AetherSX2-v1.5-3606.AppImage
+	echo "Open with : "
+	echo "./AetherSX2-v1.5-3606.AppImage "
 }
 
 function installDuckstation {

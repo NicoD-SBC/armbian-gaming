@@ -69,8 +69,8 @@ function installAethersx2 {
 	cd ~
 	wget https://www.aethersx2.com/archive/desktop/linux/AetherSX2-v1.5-3606.AppImage
 	chmod +x AetherSX2-v1.5-3606.AppImage
-	echo "Open with : "
-	echo "./AetherSX2-v1.5-3606.AppImage "
+	echo "Open with x11 desktop for best performance : "
+	echo "malirun ./AetherSX2-v1.5-3606.AppImage "
 }
 
 function installDuckstation {
@@ -86,8 +86,8 @@ function installDuckstation {
 	cd build-release
 	cmake -DCMAKE_BUILD_TYPE=Release -GNinja ..
 	ninja
-	echo "In an x11 desktop open terminal and go to cd ~/duckstation/build-release/bin "
-	echo "malirun ./duckstation-qt "
+	echo "Go to : cd ~/duckstation/build-release/bin "
+	echo " ./duckstation-qt "
 }
 
 function installMaliorDroid {

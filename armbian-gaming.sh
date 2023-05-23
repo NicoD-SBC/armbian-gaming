@@ -50,7 +50,7 @@ elif [ $choicevar -eq 8 ]
 elif [ $choicevar -eq 9 ]
 	then 
 	installDuckstation
-elif [ $choicevar -eq 9 ]
+elif [ $choicevar -eq 10 ]
 	then 
 	installAethersx2
 elif [ $choicevar -eq 11 ]

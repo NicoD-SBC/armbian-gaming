@@ -86,8 +86,8 @@ function installDuckstation {
 	cd build-release
 	cmake -DCMAKE_BUILD_TYPE=Release -GNinja ..
 	ninja
-	echo "Run with cd ~/duckstation/build-release/bin "
-	echo "./duckstation-qt "
+	echo "In an x11 desktop open terminal and go to cd ~/duckstation/build-release/bin "
+	echo "malirun ./duckstation-qt "
 }
 
 function installMaliorDroid {

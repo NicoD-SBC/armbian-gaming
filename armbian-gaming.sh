@@ -161,7 +161,7 @@ function winetricksInstall {
 	BOX86_NOBANNER=1 winetricks mfc42
 	BOX86_NOBANNER=1 winetricks msxml4
 	BOX86_NOBANNER=1 winetricks cnc_ddraw
-	sudo apt install -y libd3dadapter9-mesa lib3dadapter9-mesa:armhf
+	sudo apt install -y libd3dadapter9-mesa libd3dadapter9-mesa:armhf
 	winetricks galliumnine
 	wine ninewinecfg
 	menuJammy

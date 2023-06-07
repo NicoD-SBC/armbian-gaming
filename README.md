@@ -55,8 +55,4 @@ After building Xonotic you go to the directory :
 To run Xonotic :  
   ./all run  
   
-#To open dolphin type :  (removed dolphin for now until I can fix it)  
-#dolphing-emu  
-#Dolphin has a bug I need to fix. If anyone knows the fix, let me know.  
-  
 Thanks to, in no perticular order : Salva (YT MicroLinux), PtitSeb (creator of Box86/64 gl4es ...), MonkaBlyat (Linux guru who helped with Winetricks and Mailor-droid), ChisBread, DarkevilPT, RPardini, and all other who helped.  

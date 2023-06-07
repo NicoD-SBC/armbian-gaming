@@ -29,11 +29,8 @@ When that happens, open a 2nd terminal and type :
 
 For the Steam installer from PtitSeb you need Box86 and the Box86 compilation folder. After install you can delete ~/box86 + ~/box64 to save space.  
 
-After building Xonotic you go to the directory :   
-  cd ~/xonotic  
-
-To run Xonotic :  
-  ./all run  
+To open PPSSPP type in terminal :
+PPSSPPSDL
 
 To use Malior-droid :  
   adb connect localhost:5555  
@@ -43,8 +40,23 @@ If Malior-droid doesn't work use this :
   malior-droid stop  
   malior-droid start  
   
-To open dolphin type :  (removed dolphin for now until I can fix it)  
-dolphing-emu  
-Dolphin has a bug I need to fix. If anyone knows the fix, let me know.  
+Use duckstation by brwosing to folder with terminal :  
+cd ~/duckstation/build-release/bin  
+Open with :  
+./duckstation-qt  
+ 
+To use Aethersx2 PS2 emulator, best to use an X11 desktop for best performance.  
+With RK3588 and Panfork use malirun  
+For RK3588 use : malirun ./AetherSX2-v1.5-3606.AppImage  
+ 
+ 
+After building Xonotic you go to the directory :   
+  cd ~/xonotic  
+To run Xonotic :  
+  ./all run  
+  
+#To open dolphin type :  (removed dolphin for now until I can fix it)  
+#dolphing-emu  
+#Dolphin has a bug I need to fix. If anyone knows the fix, let me know.  
   
 Thanks to, in no perticular order : Salva (YT MicroLinux), PtitSeb (creator of Box86/64 gl4es ...), MonkaBlyat (Linux guru who helped with Winetricks and Mailor-droid), ChisBread, DarkevilPT, RPardini, and all other who helped.  

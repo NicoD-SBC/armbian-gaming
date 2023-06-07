@@ -5,17 +5,17 @@ Armbian-gaming version 1.0 : For Armbian Jammy
 Might work on other Armbian versions, but no support for them.  
 
 This script can install :  
-1. Install/Update Box64.  
-2. Install/update box86.  
-3. Install wine 64 files.  
-4. Install wine x86 files.  
-5. Install winetricks.  
-6. Install steam.  
-7. Build and install PPSSPP.  
-8. Install Malior-droid Android emulator.  
-9. Build Duckstation PS1 emulator.  
-10. Download Aethersx2 PS2 emulator.  
-11. Build Xonotic.  
+  1. Install/Update Box64.  
+  2. Install/update box86.  
+  3. Install wine 64 files.  
+  4. Install wine x86 files.  
+  5. Install winetricks.  
+  6. Install steam.  
+  7. Build and install PPSSPP.  
+  8. Install Malior-droid Android emulator.  
+  9. Build Duckstation PS1 emulator.  
+  10. Download Aethersx2 PS2 emulator.  
+  11. Build Xonotic.  
 
 Download and unzip and run script :  
 

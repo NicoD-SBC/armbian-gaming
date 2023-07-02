@@ -143,9 +143,7 @@ function winetricksInstall {
 	cd ~
 	sudo dpkg --add-architecture armhf
 	sudo apt update
-	sudo apt install libxinerama-dev:armhf libxrandr-dev:armhf libxcomposite-dev:armhf libxi-dev:armhf libxcursor-dev:armhf mesa-va-drivers:armhf libc6:armhf libx11-6:armhf libgdk-pixbuf2.0-0:armhf libgl1-mesa-dev:armhf zenity
-	libavcodec58:armhf libavformat58:armhf libpng16-16:armhf libcal3d12v5:armhf libopenal1:armhf libvorbis-dev:armhf libcurl4:armhf osspd:armhf libjpeg62:armhf libudev1:armhf libsnappy1v5:armhf
-	libsmpeg0:armhf libmyguiengine3debian1v5:armhf libqt5core5a:armhf 
+	sudo apt install libxinerama-dev:armhf libxrandr-dev:armhf libxcomposite-dev:armhf libxi-dev:armhf libxcursor-dev:armhf mesa-va-drivers:armhf libc6:armhf libx11-6:armhf libgdk-pixbuf2.0-0:armhf libgl1-mesa-dev:armhf zenity libavcodec58:armhf libavformat58:armhf libpng16-16:armhf libcal3d12v5:armhf libopenal1:armhf libvorbis-dev:armhf libcurl4:armhf osspd:armhf libjpeg62:armhf libudev1:armhf libsnappy1v5:armhf libsmpeg0:armhf libmyguiengine3debian1v5:armhf libqt5core5a:armhf 
 	assuming downloaded wine in /home/wine
 	sudo ln -s ~/wine/bin/wine /usr/local/bin/wine
 	sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg
@@ -274,6 +272,7 @@ function box86 {
 
 	sudo dpkg --add-architecture armhf
 	sudo apt update
+ 	sudo apt -y install aptitude
 	sudo aptitude install mesa-va-drivers:armhf libgtk2.0-0:armhf libsdl2-image-2.0-0:armhf libsdl1.2debian:armhf libopenal1:armhf libvorbisfile3:armhf libgl1:armhf libjpeg62:armhf libcurl4:armhf libasound2-plugins:armhf -y
 	sudo apt update
 	sudo aptitude upgrade

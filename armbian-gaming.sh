@@ -139,6 +139,7 @@ function buildDolphin {
 	make -j$(nproc)
 	sudo make install
 }
+
 function winetricksInstall {
 	cd ~
 	sudo dpkg --add-architecture armhf
@@ -152,15 +153,8 @@ function winetricksInstall {
 	sudo chmod +x winetricks
 	sudo cp winetricks /usr/local/bin
 	sudo apt install cabextract -y
-	BOX86_NOBANNER=1 winetricks dotnet20sp2
-	BOX86_NOBANNER=1 winetricks corefonts
-	BOX86_NOBANNER=1 winetricks d3dx9
-	BOX86_NOBANNER=1 winetricks quartz
-	BOX86_NOBANNER=1 winetricks mfc42
-	BOX86_NOBANNER=1 winetricks msxml4
-	BOX86_NOBANNER=1 winetricks cnc_ddraw
 	sudo apt install -y libd3dadapter9-mesa libd3dadapter9-mesa:armhf
-	winetricks galliumnine
+	winetricks -q dotnet20sp2 dotnet40 vcrun6 corefonts d3dx9 quartz mfc42 msxml4 cnc_ddraw galliumnine
 	wine ninewinecfg
 	menuJammy
 }

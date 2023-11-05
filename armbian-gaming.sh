@@ -223,7 +223,7 @@ function winex86 {
 	sudo ln -s ~/wine/bin/wine /usr/local/bin/wine
 	sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg
 	sudo ln -s ~/wine/bin/wineserver /usr/local/bin/wineserver
-
+	echo "Run wine winecfg to let wine configure itself"
 }
 
 function wine64 {

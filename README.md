@@ -49,7 +49,7 @@ If Malior-droid doesn't work use this :
   malior-droid stop  
   malior-droid start  
   
-Use duckstation by brwosing to folder with terminal :  
+Use duckstation by browsing to folder with terminal :  
 cd ~/duckstation/build-release/bin  
 Open with :  
 ./duckstation-qt  

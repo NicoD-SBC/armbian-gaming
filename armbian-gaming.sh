@@ -13,7 +13,7 @@ echo "6. Install steam. "
 echo "7. Build and install PPSSPP. "
 # echo "8. Build and install Dolphin emulator. "
 echo "8. Install Malior-droid Android emulator. "
-echo "9. Build Duckstation PS1 emulator. "
+echo "9. Build retropie. "
 echo "10. Download Aethersx2 PS2 emulator. " 
 echo "11. Build Xonotic. "
 echo "12. Exit "
@@ -49,7 +49,7 @@ elif [ $choicevar -eq 8 ]
 	installMaliorDroid
 elif [ $choicevar -eq 9 ]
 	then 
-	installDuckstation
+	installRetropie
 elif [ $choicevar -eq 10 ]
 	then 
 	installAethersx2
@@ -64,6 +64,17 @@ else
 	echo "Invalid choice. "
 fi
 }
+
+function installRetropie {
+	sudo apt update
+ 	sudo apt -y dist-upgrade
+  	sudo apt install git
+   	cd ~
+    	git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
+     	cd RetroPie-Setup
+	sudo ./retropie_setup.sh
+}
+
 
 function installAethersx2 {
 	cd ~

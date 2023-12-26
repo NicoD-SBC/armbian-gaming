@@ -7,7 +7,7 @@ Might work on other Armbian versions, but no support for them.
 This script can install :  
   1. Install/Update Box64.  
   2. Install/update box86.  
-  3. Install wine 64 files.  
+  3. Install wine 64 files. Updated to version 8.16. No need for box86 for x86 games/wine.
   4. Install wine x86 files.  
   5. Install winetricks.  
   6. Install steam.  

@@ -276,11 +276,11 @@ function wine64 {
 	sudo rm /usr/local/bin/winecfg
 	sudo rm /usr/local/bin/wineboot
  	cd wine-8.16-amd64/
-	sudo ln -s bin/wine /usr/local/bin/wine
-	sudo ln -s bin/wine64 /usr/local/bin/wine64
-	sudo ln -s bin/wineserver /usr/local/bin/wineserver
-	sudo ln -s bin/winecfg /usr/local/bin/winecfg
-	sudo ln -s bin/wineboot /usr/local/bin/wineboot
+	sudo ln -s ~/wine/wine-8.16-amd64/bin/wine /usr/local/bin/wine
+	sudo ln -s ~/wine/wine-8.16-amd64/bin/wine64 /usr/local/bin/wine64
+	sudo ln -s ~/wine/wine-8.16-amd64/bin/wineserver /usr/local/bin/wineserver
+	sudo ln -s ~/wine/wine-8.16-amd64/bin/winecfg /usr/local/bin/winecfg
+	sudo ln -s ~/wine/wine-8.16-amd64/bin/wineboot /usr/local/bin/wineboot
 	cd ~
  	sudo rm wine-8.16-amd64.tar.xz
   	echo "Wine 64-bit installed, test with : "

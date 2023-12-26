@@ -237,7 +237,7 @@ function winex86 {
 	echo "Run wine winecfg to let wine configure itself"
 }
 
-function wine64 {
+function wine64Old {
 	sudo rm -r ~/.wine/
 	sudo rm -r ~/wine/
 	cd ~
@@ -258,6 +258,30 @@ function wine64 {
 	cd ..
 	sudo rm PlayOnLinux-wine-6.0.1-upstream-linux-amd64.tar.gz
 	echo "Wine installed, test with : "
+	echo "box64 wine winecfg "
+}
+
+function wine64 {
+	sudo rm -r ~/.wine/
+	sudo rm -r ~/wine/
+	cd ~
+ 	wget https://github.com/Kron4ek/Wine-Builds/releases/download/8.16/wine-8.16-amd64.tar.xz
+  	mkdir ~/wine
+	cd ~/wine
+ 	xz -d ../wine-8.16-amd64.tar.xz
+  	sudo rm /usr/local/bin/wine
+	sudo rm /usr/local/bin/wine64
+	sudo rm /usr/local/bin/wineserver
+	sudo rm /usr/local/bin/winecfg
+	sudo rm /usr/local/bin/wineboot
+	sudo ln -s ~/wine/bin/wine /usr/local/bin/wine
+	sudo ln -s ~/wine/bin/wine64 /usr/local/bin/wine64
+	sudo ln -s ~/wine/bin/wineserver /usr/local/bin/wineserver
+	sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg
+	sudo ln -s ~/wine/bin/wineboot /usr/local/bin/wineboot
+	cd ..
+ 	sudo rm wine-8.16-amd64.tar.xz
+  	echo "Wine 64-bit installed, test with : "
 	echo "box64 wine winecfg "
 }
 

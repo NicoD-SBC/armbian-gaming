@@ -13,7 +13,7 @@ This script can install :
   6. Install steam.  
   7. Build and install PPSSPP.  
   8. Install Malior-droid Android emulator.  
-  9. Build Duckstation PS1 emulator.  
+  9. Build retropie.  
   10. Download Aethersx2 PS2 emulator.  
   11. Build Xonotic.  
 
@@ -53,6 +53,9 @@ Use duckstation by browsing to folder with terminal :
 cd ~/duckstation/build-release/bin  
 Open with :  
 ./duckstation-qt  
+
+To use retropie type :
+emulationstation
  
 To use Aethersx2 PS2 emulator, best to use an X11 desktop for best performance.  
 With RK3588 and Panfork use malirun  

@@ -78,7 +78,7 @@ function installRetropie {
 
 function installAethersx2 {
 	cd ~
-	wget https://www.aethersx2.com/archive/desktop/linux/AetherSX2-v1.5-3606.AppImage
+	wget https://aether-unnoficial-mirror.vercel.app/builds/AetherSX2-v1.5-3606.AppImage
 	chmod +x AetherSX2-v1.5-3606.AppImage
 	echo "Open with x11 desktop for best performance : "
 	echo "For RK3588 use : malirun ./AetherSX2-v1.5-3606.AppImage "

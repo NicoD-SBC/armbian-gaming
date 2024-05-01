@@ -165,7 +165,7 @@ function winetricksInstall {
 	sudo cp winetricks /usr/local/bin
 	sudo apt install cabextract -y
 	sudo apt install -y libd3dadapter9-mesa libd3dadapter9-mesa:armhf
-	winetricks -q dotnet20sp2 dotnet40 vcrun6 corefonts d3dx9 quartz mfc42 msxml4 cnc_ddraw galliumnine
+	winetricks -q dotnet20sp2 dotnet40 vcrun6 corefonts d3dx9 vb6run xact d3drm d3dx9_43 d3dcompiler_43 msxml3 vcrun2003 vcrun2005 vcrun2008 quartz mfc42 msxml4 cnc_ddraw galliumnine
 	wine ninewinecfg
 	menuJammy
 }

@@ -78,7 +78,7 @@ function installRetropie {
 
 function installAethersx2 {
 	cd ~
-	wget https://www.aethersx2.com/archive/desktop/linux/AetherSX2-v1.5-3606.AppImage
+	wget https://aether-unnoficial-mirror.vercel.app/builds/AetherSX2-v1.5-3606.AppImage
 	chmod +x AetherSX2-v1.5-3606.AppImage
 	echo "Open with x11 desktop for best performance : "
 	echo "For RK3588 use : malirun ./AetherSX2-v1.5-3606.AppImage "
@@ -155,7 +155,7 @@ function winetricksInstall {
 	cd ~
 	sudo dpkg --add-architecture armhf
 	sudo apt update
-	sudo apt install libxinerama-dev:armhf libxrandr-dev:armhf libxcomposite-dev:armhf libxi-dev:armhf libxcursor-dev:armhf mesa-va-drivers:armhf libc6:armhf libx11-6:armhf libgdk-pixbuf2.0-0:armhf libgl1-mesa-dev:armhf zenity libavcodec58:armhf libavformat58:armhf libpng16-16:armhf libcal3d12v5:armhf libopenal1:armhf libvorbis-dev:armhf libcurl4:armhf osspd:armhf libjpeg62:armhf libudev1:armhf libsnappy1v5:armhf libsmpeg0:armhf libmyguiengine3debian1v5:armhf libqt5core5a:armhf 
+	sudo apt install libncurses6:armhf libc6:armhf libx11-6:armhf libgdk-pixbuf2.0-0:armhf libgtk2.0-0:armhf libstdc++6:armhf libsdl2-2.0-0:armhf mesa-va-drivers:armhf libsdl-mixer1.2:armhf libpng16-16:armhf libsdl2-net-2.0-0:armhf libopenal1:armhf libsdl2-image-2.0-0:armhf libjpeg62:armhf libudev1:armhf libgl1-mesa-dev:armhf libx11-dev:armhf libsdl2-image-2.0-0:armhf libsdl2-mixer-2.0-0:armhf libvulkan1:armhf
 	echo "assuming downloaded wine in /home/wine"
 	sudo ln -s ~/wine/bin/wine /usr/local/bin/wine
 	sudo ln -s ~/wine/bin/winecfg /usr/local/bin/winecfg
@@ -165,7 +165,7 @@ function winetricksInstall {
 	sudo cp winetricks /usr/local/bin
 	sudo apt install cabextract -y
 	sudo apt install -y libd3dadapter9-mesa libd3dadapter9-mesa:armhf
-	winetricks -q dotnet20sp2 dotnet40 vcrun6 corefonts d3dx9 quartz mfc42 msxml4 cnc_ddraw galliumnine
+	winetricks -q dotnet20sp2 dotnet40 vcrun6 corefonts d3dx9 vb6run xact d3drm d3dx9_43 d3dcompiler_43 msxml3 vcrun2003 vcrun2005 vcrun2008 quartz mfc42 msxml4 cnc_ddraw galliumnine
 	wine ninewinecfg
 	menuJammy
 }

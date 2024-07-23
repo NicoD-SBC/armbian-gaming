@@ -24,7 +24,7 @@ Download and unzip and run script :
 
 ! Only install one wine version. Delete ~/wine if you want to install another version. !  
 Hidden ./wine will automaticaly be removed.   
-I advice to use the x86 7.15 wine version.  
+I advice to use the 64-bit version.  
 If you want to download another version. Put the "bin, "lib" and "share" folders into ~/wine  
 And run "wine winecfg"  
 
@@ -39,7 +39,7 @@ When that happens, open a 2nd terminal and type :
 For the Steam installer from PtitSeb you need Box86 and the Box86 compilation folder. After install you can delete ~/box86 + ~/box64 to save space.  
 
 To open PPSSPP type in terminal :
-PPSSPPSDL
+  PPSSPPSDL
 
 To use Malior-droid :  
   adb connect localhost:5555  
@@ -49,17 +49,13 @@ If Malior-droid doesn't work use this :
   malior-droid stop  
   malior-droid start  
   
-Use duckstation by browsing to folder with terminal :  
-cd ~/duckstation/build-release/bin  
-Open with :  
-./duckstation-qt  
-
 To use retropie type :
-emulationstation
+  emulationstation
  
 To use Aethersx2 PS2 emulator, best to use an X11 desktop for best performance.  
 With RK3588 and Panfork use malirun  
-For RK3588 use : malirun ./AetherSX2-v1.5-3606.AppImage  
+For RK3588 use : 
+  malirun ./AetherSX2-v1.5-3606.AppImage  
  
  
 After building Xonotic you go to the directory :   

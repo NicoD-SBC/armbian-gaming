@@ -176,7 +176,7 @@ function installPPSSPP {
 	cd ppsspp
 	git pull --rebase https://github.com/hrydgard/ppsspp.git
 	git submodule update --init --recursive
-	sudo apt -y install build-essential cmake libgl1-mesa-dev libsdl2-dev libvulkan-dev
+	sudo apt -y install build-essential cmake libgl1-mesa-dev libsdl2-dev libvulkan-dev libglfw3-dev libglu1-mesa-dev
 	/bin/bash ./b.sh
 	cd build
 	make

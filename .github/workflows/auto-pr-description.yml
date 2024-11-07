@@ -8,9 +8,10 @@ jobs:
   generate-pr-description:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pull-requests: write
       issues: write
+      repository-projects: write
 
     steps:
       - name: Check out repository

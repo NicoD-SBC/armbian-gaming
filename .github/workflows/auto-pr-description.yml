@@ -1,0 +1,25 @@
+name: Auto generate PR Description [C4F]
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  generate-pr-description:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Auto-generate PR Description
+        uses: hqnicolas/auto-pr-description-g4f-action@v1.2.4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          model: 'o1-mini'

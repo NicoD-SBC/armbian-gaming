@@ -68,7 +68,7 @@ fi
 function installRetropie {
 	sudo apt update
  	sudo apt -y dist-upgrade
-  	sudo apt install git
+	sudo apt install git libglu1-mesa-dev
    	cd ~
     	git clone --depth=1 https://github.com/RetroPie/RetroPie-Setup.git
      	cd RetroPie-Setup
